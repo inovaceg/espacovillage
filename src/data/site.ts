@@ -50,6 +50,8 @@ export const clinicEnvironmentPhotos: ClinicEnvironmentPhoto[] = [
   { src: "/assets/clinica-ambiente-06.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 6 de 8" },
   { src: "/assets/clinica-ambiente-07.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 7 de 8" },
   { src: "/assets/clinica-ambiente-08.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 8 de 8" },
+  { src: "/assets/clinica-ambiente-09.jpeg", alt: "Piscina e área verde da Clínica Espaço Village" },
+  { src: "/assets/clinica-ambiente-10.jpeg", alt: "Edificação da Clínica Espaço Village cercada por área verde" },
 ];
 
 export const galleryCategories: Array<"Todos" | GalleryCategory> = ["Todos", "Área Verde", "Estrutura", "Acomodações", "Ambientes"];
