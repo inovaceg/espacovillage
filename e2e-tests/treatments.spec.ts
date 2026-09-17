@@ -15,9 +15,10 @@ test("apresenta tratamentos e navega para dependência química", async ({ page 
   await expect(page.getByRole("heading", { name: "Tratamentos especializados para diferentes necessidades" })).toBeVisible();
   const dependencyCard = page.getByRole("article").filter({ has: page.getByRole("heading", { name: "Dependência Química", exact: true }) });
   await expect(dependencyCard).toBeVisible();
+  await expect(dependencyCard.getByText("É possível começar de novo.", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: "Fale com nossa equipe" }).first()).toHaveAttribute("href", "https://wa.me/5521990716245");
 
-  await dependencyCard.getByRole("link", { name: "Conheça o tratamento", exact: true }).click();
+  await dependencyCard.getByRole("link", { name: "Quero entender o tratamento", exact: true }).click();
   await expect(page).toHaveURL(/\/tratamentos\/dependencia-quimica$/);
   await expect(page.getByRole("heading", { name: "Dependência Química", exact: true }).first()).toBeVisible();
   await expect(page.getByText("Quando o álcool ou as drogas começam a controlar a vida, pedir ajuda pode ser o começo de uma nova direção.", { exact: true })).toBeVisible();

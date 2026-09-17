@@ -12,6 +12,8 @@ export type Treatment = {
   name: string;
   slug: string;
   description: string;
+  highlight: string;
+  secondaryDescription: string;
   image?: string;
   information: string[];
   frequentlyAskedQuestions: string[];
@@ -73,42 +75,50 @@ export const treatments: Treatment[] = [
   {
     name: "Dependência Química",
     slug: "dependencia-quimica",
-    description: "Tratamento individualizado para pessoas que enfrentam problemas relacionados ao uso de álcool e outras drogas, com abordagem multidisciplinar e estratégias voltadas à recuperação e prevenção de recaídas.",
+    highlight: "É possível começar de novo.",
+    description: "Quando as drogas começam a ocupar o espaço da família, dos sonhos e da própria vida, é hora de olhar para isso com cuidado.",
+    secondaryDescription: "Parar nem sempre é apenas uma questão de querer. O tratamento ajuda a compreender os gatilhos, enfrentar a dependência e desenvolver novas estratégias para construir uma vida longe do uso de drogas.",
     image: "/assets/clinica-jardim.jpeg",
     information: [
       "O uso problemático de álcool e outras drogas pode afetar diferentes áreas da vida, incluindo saúde, relacionamentos, família, trabalho e estabilidade emocional.",
       "O primeiro passo do processo é uma avaliação clínica e biopsicossocial. A partir dela, é possível compreender as necessidades do paciente e estabelecer um plano terapêutico individualizado.",
     ],
     frequentlyAskedQuestions: [],
-    cta: "Conheça o tratamento",
+    cta: "Quero entender o tratamento",
   },
   {
     name: "Tratamento do Alcoolismo",
     slug: "alcoolismo",
-    description: "Abordagem estruturada para pessoas que desenvolveram dependência do álcool, considerando aspectos físicos, emocionais, comportamentais, familiares e sociais.",
+    highlight: "Quando o álcool controla, é hora de pedir ajuda.",
+    description: "Quando beber deixa de ser uma escolha e começa a trazer perdas, procurar ajuda pode mudar o rumo dessa história.",
+    secondaryDescription: "Tentativas frustradas de parar, conflitos familiares, problemas no trabalho, culpa e perda de controle podem indicar que o álcool passou a ocupar um lugar maior do que deveria. O tratamento oferece acompanhamento estruturado para enfrentar a dependência e suas consequências.",
     image: "/assets/clinica-paisagem.jpeg",
     information: [
       "A dependência do álcool pode comprometer a saúde física, emocional, familiar, social e profissional. Reconhecer os sinais e buscar avaliação especializada é um passo importante.",
       "A presença de sinais relacionados ao consumo não substitui uma avaliação profissional.",
     ],
     frequentlyAskedQuestions: [],
-    cta: "Saiba mais",
+    cta: "Saiba como podemos ajudar",
   },
   {
     name: "Psiquiatria e Saúde Mental",
     slug: "saude-mental",
-    description: "Cuidado em ambiente protegido e humanizado para pessoas que necessitam de acompanhamento relacionado à saúde mental, com atividades terapêuticas e acompanhamento multidisciplinar.",
+    highlight: "Sua mente também precisa de cuidado.",
+    description: "Há momentos em que continuar tentando suportar tudo sozinho já não é suficiente.",
+    secondaryDescription: "Sofrimento emocional intenso e alterações importantes no comportamento ou na rotina podem exigir um cuidado mais próximo. O Espaço Village oferece um ambiente protegido e humanizado, com acompanhamento multidisciplinar e atenção individualizada.",
     image: "/assets/clinica-interior.jpeg",
     information: [
       "O tratamento envolve diferentes áreas profissionais, permitindo uma abordagem ampla das necessidades apresentadas durante o processo terapêutico.",
     ],
     frequentlyAskedQuestions: [],
-    cta: "Conheça o tratamento",
+    cta: "Conheça o cuidado em saúde mental",
   },
   {
     name: "Internação",
     slug: "internacao",
-    description: "Quando existe indicação clínica, a internação pode oferecer um ambiente protegido e estruturado para estabilização, acompanhamento e desenvolvimento do plano terapêutico.",
+    highlight: "Proteção para atravessar um momento difícil.",
+    description: "Quando permanecer no mesmo ambiente torna mais difícil interromper um ciclo, um espaço protegido pode fazer parte do cuidado.",
+    secondaryDescription: "A internação proporciona uma rotina estruturada para avaliação, estabilização e desenvolvimento do tratamento. Cada situação é analisada individualmente para compreender a modalidade de cuidado indicada e, quando aplicável, os critérios clínicos e legais.",
     image: "/assets/clinica-espaco.jpeg",
     information: [
       "A internação voluntária é indicada quando o paciente compreende a necessidade do tratamento e concorda com a internação e com a participação no processo terapêutico.",
@@ -116,7 +126,7 @@ export const treatments: Treatment[] = [
       "A indicação da modalidade de internação depende de avaliação individual e dos requisitos clínicos e legais aplicáveis.",
     ],
     frequentlyAskedQuestions: [],
-    cta: "Entenda como funciona",
+    cta: "Entenda como funciona a internação",
   },
 ];
 

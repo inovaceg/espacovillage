@@ -86,7 +86,7 @@ export default function TreatmentDetailPage() {
           <article>
             {isDependency ? <DependencyContent /> : <>
               <SectionTitle eyebrow="Cuidado individualizado" title={treatment.name} text={treatment.description} />
-              <div className="mt-8 space-y-5">{treatment.information.map((paragraph) => <p key={paragraph} className="leading-8 text-[#5b675b]">{paragraph}</p>)}</div>
+              <div className="mt-8 space-y-5"><p className="leading-8 text-[#5b675b]">{treatment.secondaryDescription}</p>{treatment.information.map((paragraph) => <p key={paragraph} className="leading-8 text-[#5b675b]">{paragraph}</p>)}</div>
               {treatment.slug === "internacao" && <div className="mt-8 rounded-2xl border border-[#dfe4d9] bg-[#f6f5ed] p-6"><h2 className="font-serif text-2xl text-[#244c36]">Orientação responsável</h2><p className="mt-3 text-sm leading-7 text-[#5b675b]">A internação voluntária ou involuntária deve observar a legislação aplicável. Fale com a equipe para receber orientação sobre a situação.</p></div>}
             </>}
             <div className="mt-9 flex flex-wrap gap-3"><WhatsAppButton /><Link to="/tratamentos" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#b9c5b5] px-5 text-sm font-semibold text-[#244c36] hover:bg-[#edf0e8]"><ArrowLeft size={16} /> Voltar para tratamentos</Link></div>
