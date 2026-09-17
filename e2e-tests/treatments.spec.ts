@@ -12,7 +12,7 @@ test("apresenta tratamentos e navega para dependência química", async ({ page 
 
   await page.getByRole("link", { name: "Conheça os tratamentos" }).click();
   await expect(page.locator("#principais-tratamentos")).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Principais tratamentos" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Tratamentos especializados para diferentes necessidades" })).toBeVisible();
   const dependencyCard = page.getByRole("article").filter({ has: page.getByRole("heading", { name: "Dependência Química", exact: true }) });
   await expect(dependencyCard).toBeVisible();
   await expect(page.getByRole("link", { name: "Fale com nossa equipe" }).first()).toHaveAttribute("href", "https://wa.me/5521990716245");

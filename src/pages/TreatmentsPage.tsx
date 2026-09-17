@@ -187,7 +187,11 @@ export default function TreatmentsPage() {
 
       <section id="principais-tratamentos" className="scroll-mt-24 bg-[#edf0e8] px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle eyebrow="Possibilidades de cuidado" title="Principais tratamentos" />
+          <SectionTitle
+            eyebrow="Possibilidades de cuidado"
+            title="Tratamentos especializados para diferentes necessidades"
+            text="Cada pessoa chega até nós com uma história, necessidades e desafios diferentes. Por isso, o cuidado no Espaço Village começa com uma avaliação individualizada, que orienta a construção do plano terapêutico mais adequado para cada caso."
+          />
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {treatments.map((treatment) => <TreatmentCard key={treatment.slug} treatment={treatment} />)}
           </div>
