@@ -1,5 +1,13 @@
 export type GalleryCategory = "Área Verde" | "Estrutura" | "Acomodações" | "Ambientes";
 
+export type GalleryPhoto = {
+  src: string;
+  alt: string;
+  category?: GalleryCategory;
+};
+
+export type ClinicEnvironmentPhoto = Omit<GalleryPhoto, "category">;
+
 export type Treatment = {
   name: string;
   slug: string;
@@ -32,6 +40,17 @@ export const site = {
     { src: "/assets/clinica-interior.jpeg", alt: "Ambiente interno do Espaço Village", category: "Ambientes" as GalleryCategory },
   ],
 };
+
+export const clinicEnvironmentPhotos: ClinicEnvironmentPhoto[] = [
+  { src: "/assets/clinica-ambiente-01.jpg", alt: "Registro fotográfico da clínica Espaço Village, imagem 1 de 8" },
+  { src: "/assets/clinica-ambiente-02.jpg", alt: "Registro fotográfico da clínica Espaço Village, imagem 2 de 8" },
+  { src: "/assets/clinica-ambiente-03.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 3 de 8" },
+  { src: "/assets/clinica-ambiente-04.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 4 de 8" },
+  { src: "/assets/clinica-ambiente-05.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 5 de 8" },
+  { src: "/assets/clinica-ambiente-06.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 6 de 8" },
+  { src: "/assets/clinica-ambiente-07.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 7 de 8" },
+  { src: "/assets/clinica-ambiente-08.jpeg", alt: "Registro fotográfico da clínica Espaço Village, imagem 8 de 8" },
+];
 
 export const galleryCategories: Array<"Todos" | GalleryCategory> = ["Todos", "Área Verde", "Estrutura", "Acomodações", "Ambientes"];
 
