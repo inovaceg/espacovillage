@@ -41,14 +41,14 @@ export function SEO({ title, description, path = "" }: { title: string; descript
 export function Header() {
   const [open, setOpen] = useState(false);
   return <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d8ddcf]/80 bg-[#fbfaf5]/95 backdrop-blur" aria-label="Cabeçalho principal">
-    <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
-      <Link to="/" onClick={() => setOpen(false)} className="flex shrink-0 items-center gap-3" aria-label="Espaço Village, página inicial">
-        <img src="/assets/image-removebg-preview.png" alt="Espaço Village" className="h-14 w-auto object-contain" width="180" height="80" />
-        <span className="hidden border-l border-[#cdd7c8] pl-3 text-xs leading-5 text-[#526153] 2xl:block"><strong className="block font-semibold tracking-[0.12em] text-[#244c36]">ESPAÇO VILLAGE</strong>Clínica • Guapimirim/RJ</span>
+    <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-2 px-3 sm:gap-4 sm:px-5 lg:px-8">
+      <Link to="/" onClick={() => setOpen(false)} className="flex min-w-0 items-center gap-2 sm:gap-3" aria-label="Espaço Village, página inicial">
+        <img src="/assets/image-removebg-preview.png" alt="Espaço Village" className="h-14 w-auto shrink-0 object-contain" width="180" height="80" />
+        <span className="min-w-0 border-l border-[#cdd7c8] pl-2 text-[10px] leading-4 text-[#526153] sm:pl-3 sm:text-xs sm:leading-5 xl:hidden 2xl:block"><strong className="block whitespace-nowrap font-semibold tracking-[0.08em] text-[#244c36] sm:tracking-[0.12em]">ESPAÇO VILLAGE</strong><span className="max-[359px]:hidden">Clínica • Guapimirim/RJ</span></span>
       </Link>
       <nav className="hidden items-center gap-3 xl:flex" aria-label="Navegação principal">{navItems.map(([label, href]) => <NavLink key={href} to={href} className={({ isActive }) => `text-[13px] font-medium tracking-wide transition-colors ${isActive ? "text-[#244c36]" : "text-[#526153] hover:text-[#244c36]"}`}>{label}</NavLink>)}</nav>
       <div className="hidden items-center gap-4 xl:flex"><a href={site.phoneHref} className="hidden items-center gap-2 whitespace-nowrap text-sm font-medium text-[#244c36] 2xl:flex" aria-label={`Telefone ${site.phone}`}><Phone size={15} />{site.phone}</a><ContactButton /></div>
-      <button className="rounded-lg p-3 text-[#244c36] hover:bg-[#edf0e8] xl:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open}>{open ? <X /> : <Menu />}</button>
+      <button className="shrink-0 rounded-lg p-3 text-[#244c36] hover:bg-[#edf0e8] xl:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open}>{open ? <X /> : <Menu />}</button>
     </div>
     {open && <nav className="max-h-[calc(100vh-76px)] overflow-y-auto border-t border-[#d8ddcf] bg-[#fbfaf5] px-5 py-5 xl:hidden" aria-label="Menu mobile"><a href={site.phoneHref} className="mb-3 flex items-center gap-2 border-b border-[#e5e8df] pb-4 text-sm font-semibold text-[#244c36]"><Phone size={16} />{site.phone}</a>{navItems.map(([label, href]) => <NavLink key={href} to={href} onClick={() => setOpen(false)} className="block border-b border-[#e5e8df] py-3 text-sm font-medium text-[#244c36]">{label}</NavLink>)}<div className="pt-5"><ContactButton onClick={() => setOpen(false)}>Fale Conosco</ContactButton></div></nav>}
   </header>;
