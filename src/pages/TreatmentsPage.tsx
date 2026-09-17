@@ -270,10 +270,10 @@ export default function TreatmentsPage() {
       <section className="px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
-            <SectionTitle eyebrow="Alcoolismo" title="Quando o álcool começa a ocupar espaço demais na vida" />
-            <p className="mt-6 leading-8 text-[#5b675b]">A dependência do álcool pode comprometer a saúde física, emocional, familiar, social e profissional. Reconhecer os sinais e buscar avaliação especializada é um passo importante.</p>
-            <Link to="/tratamentos/alcoolismo" className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#244c36]">Conheça o tratamento do alcoolismo <ArrowRight size={16} /></Link>
-          </div>
+                      <SectionTitle eyebrow="Alcoolismo" title="Quando o álcool começa a trazer perdas, procurar ajuda pode ser o começo de uma mudança." />
+                      <p className="mt-6 leading-8 text-[#5b675b]">A dependência do álcool pode afetar a saúde, os relacionamentos, a família, o trabalho e o equilíbrio emocional. No Espaço Village, cada pessoa é acolhida de forma individualizada, considerando sua história, necessidades e momento de vida.</p>
+                      <Link to="/tratamentos/alcoolismo" className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#244c36]">Conheça o tratamento do alcoolismo <ArrowRight size={16} /></Link>
+                    </div>
           <div className="rounded-2xl border border-[#dfe4d9] bg-[#f6f5ed] p-6 sm:p-8">
             <h3 className="font-serif text-2xl text-[#244c36]">Alguns sinais merecem atenção</h3>
             <ul className="mt-5 grid gap-3 text-sm leading-6 text-[#5b675b]">

@@ -15,6 +15,17 @@ import { Link, useParams } from "react-router-dom";
 import { site, treatments } from "@/data/site";
 import { Breadcrumbs, PageShell, SEO, SectionTitle, WhatsAppButton } from "@/components/SiteComponents";
 
+const alcoholParagraphs = [
+  {
+    heading: "Quando procurar ajuda?",
+    text: "Tentativas frustradas de parar, perda de controle, aumento do consumo, conflitos familiares, prejuízos profissionais e continuar bebendo apesar das consequências são sinais que merecem atenção e avaliação profissional.",
+  },
+  {
+    heading: "Como funciona o tratamento?",
+    text: "O cuidado pode envolver avaliação clínica, acompanhamento psicológico e psiquiátrico, psicoterapia individual e em grupo, prevenção de recaídas, orientação familiar e atividades que integram o programa terapêutico.",
+  },
+] as const;
+
 const dependencyParagraphs = [
   "Talvez você já tenha prometido a si mesmo que iria parar. Talvez tenha conseguido ficar algum tempo sem usar e depois voltou. Ou talvez esteja vendo sua saúde, seus relacionamentos, sua família, seu trabalho e seus planos serem afetados pelo uso de álcool ou outras drogas.",
   "A dependência química não se resume à falta de força de vontade. É uma condição complexa que pode envolver aspectos físicos, emocionais, comportamentais e sociais — e que merece ser tratada com seriedade, respeito e sem julgamentos.",
@@ -33,6 +44,32 @@ const dependencySigns: Array<{ icon: LucideIcon; label: string }> = [
   { icon: Brain, label: "Apresenta sofrimento emocional ou mudanças importantes de comportamento" },
   { icon: HeartPulse, label: "Sua família está preocupada e você já não sabe como sair dessa situação" },
 ];
+
+function AlcoholContent() {
+  return (
+    <>
+      <div className="space-y-5">
+        <p className="leading-8 text-[#5b675b]">A dependência do álcool pode afetar a saúde, os relacionamentos, a família, o trabalho e o equilíbrio emocional. No Espaço Village, cada pessoa é acolhida de forma individualizada, considerando sua história, necessidades e momento de vida.</p>
+      </div>
+      <section className="mt-12 space-y-8" aria-labelledby="alcohol-heading">
+        {alcoholParagraphs.map(({ heading, text }) => (
+          <div key={heading}>
+            <h2 id="alcohol-heading" className="font-serif text-2xl text-[#244c36] sm:text-3xl">{heading}</h2>
+            <p className="mt-3 leading-8 text-[#5b675b]">{text}</p>
+          </div>
+        ))}
+      </section>
+      <div className="mt-10 rounded-2xl border border-[#dfe4d9] bg-[#f6f5ed] p-6 sm:p-8">
+        <h2 className="font-serif text-2xl text-[#244c36]">O primeiro passo pode ser uma conversa</h2>
+        <p className="mt-4 leading-8 text-[#5b675b]">Você não precisa esperar que o álcool provoque ainda mais perdas para buscar ajuda.</p>
+        <p className="mt-3 leading-8 text-[#5b675b]">Se você está preocupado com seu consumo ou com alguém da sua família, converse com a equipe do Espaço Village e entenda as possibilidades de cuidado.</p>
+        <Link to="/contato" className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#c2a16a] px-5 text-sm font-semibold text-[#203d2b] transition hover:bg-[#d5b87f] focus:outline-none focus:ring-2 focus:ring-[#c2a16a] focus:ring-offset-2">
+          Falar com nossa equipe <ArrowRight size={16} />
+        </Link>
+      </div>
+    </>
+  );
+}
 
 function DependencyContent() {
   return (
@@ -67,6 +104,7 @@ export default function TreatmentDetailPage() {
   const { slug } = useParams();
   const treatment = treatments.find((item) => item.slug === slug) ?? treatments[0];
   const isDependency = treatment.slug === "dependencia-quimica";
+  const isAlcohol = treatment.slug === "alcoolismo";
 
   return (
     <PageShell>
@@ -77,14 +115,14 @@ export default function TreatmentDetailPage() {
         <div className="relative mx-auto w-full max-w-7xl px-5 py-20 lg:px-8">
           <p className="eyebrow text-[#e2c58f]">Tratamentos</p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">{treatment.name}</h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-[#edf0e7]">{isDependency ? "Quando o álcool ou as drogas começam a controlar a vida, pedir ajuda pode ser o começo de uma nova direção." : treatment.description}</p>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-[#edf0e7]">{isDependency ? "Quando o álcool ou as drogas começam a controlar a vida, pedir ajuda pode ser o começo de uma nova direção." : isAlcohol ? "Quando o álcool começa a trazer perdas, procurar ajuda pode ser o começo de uma mudança." : treatment.description}</p>
         </div>
       </section>
       <Breadcrumbs current={treatment.name} />
       <section className="px-5 py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.8fr]">
           <article>
-            {isDependency ? <DependencyContent /> : <>
+            {isDependency ? <DependencyContent /> : isAlcohol ? <AlcoholContent /> : <>
               <SectionTitle eyebrow="Cuidado individualizado" title={treatment.name} text={treatment.description} />
               <div className="mt-8 space-y-5"><p className="leading-8 text-[#5b675b]">{treatment.secondaryDescription}</p>{treatment.information.map((paragraph) => <p key={paragraph} className="leading-8 text-[#5b675b]">{paragraph}</p>)}</div>
               {treatment.slug === "internacao" && <div className="mt-8 rounded-2xl border border-[#dfe4d9] bg-[#f6f5ed] p-6"><h2 className="font-serif text-2xl text-[#244c36]">Orientação responsável</h2><p className="mt-3 text-sm leading-7 text-[#5b675b]">A internação voluntária ou involuntária deve observar a legislação aplicável. Fale com a equipe para receber orientação sobre a situação.</p></div>}

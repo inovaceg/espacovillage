@@ -26,3 +26,19 @@ test("apresenta tratamentos e navega para dependência química", async ({ page 
   await expect(page.getByText("Já tentou parar sozinho e voltou a usar", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: "Quero conversar com a equipe", exact: true })).toHaveAttribute("href", "/contato");
 });
+
+test("página de tratamento do alcoolismo", async ({ page }) => {
+  await page.addInitScript(() => localStorage.clear());
+  await page.goto("/tratamentos/alcoolismo");
+
+  await expect(page.getByRole("button", { name: "Recusar" })).toBeVisible();
+  await page.getByRole("button", { name: "Recusar" }).click();
+  await expect(page.getByRole("heading", { name: "Tratamento do Alcoolismo", exact: true })).toBeVisible();
+  await expect(page.getByText("Quando o álcool começa a trazer perdas, procurar ajuda pode ser o começo de uma mudança.", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Quando procurar ajuda?" })).toBeVisible();
+  await expect(page.getByText("Tentativas frustradas de parar, perda de controle, aumento do consumo, conflitos familiares, prejuízos profissionais e continuar bebendo apesar das consequências são sinais que merecem atenção e avaliação profissional.", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Como funciona o tratamento?" })).toBeVisible();
+  await expect(page.getByText("O cuidado pode envolver avaliação clínica, acompanhamento psicológico e psiquiátrico, psicoterapia individual e em grupo, prevenção de recaídas, orientação familiar e atividades que integram o programa terapêutico.", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "O primeiro passo pode ser uma conversa" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Falar com nossa equipe", exact: true })).toHaveAttribute("href", "/contato");
+});

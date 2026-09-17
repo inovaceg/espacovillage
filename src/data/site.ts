@@ -89,16 +89,16 @@ export const treatments: Treatment[] = [
   {
     name: "Tratamento do Alcoolismo",
     slug: "alcoolismo",
-    highlight: "Quando o álcool controla, é hora de pedir ajuda.",
-    description: "Quando beber deixa de ser uma escolha e começa a trazer perdas, procurar ajuda pode mudar o rumo dessa história.",
-    secondaryDescription: "Tentativas frustradas de parar, conflitos familiares, problemas no trabalho, culpa e perda de controle podem indicar que o álcool passou a ocupar um lugar maior do que deveria. O tratamento oferece acompanhamento estruturado para enfrentar a dependência e suas consequências.",
+    highlight: "Quando o álcool começa a trazer perdas, é hora de pedir ajuda.",
+    description: "Quando beber deixa de ser uma escolha e começa a trazer perdas, procurar ajuda pode ser o começo de uma mudança.",
+    secondaryDescription: "A dependência do álcool pode afetar a saúde, os relacionamentos, a família, o trabalho e o equilíbrio emocional. No Espaço Village, cada pessoa é acolhida de forma individualizada, considerando sua história, necessidades e momento de vida.",
     image: "/assets/clinica-paisagem.jpeg",
     information: [
-      "A dependência do álcool pode comprometer a saúde física, emocional, familiar, social e profissional. Reconhecer os sinais e buscar avaliação especializada é um passo importante.",
-      "A presença de sinais relacionados ao consumo não substitui uma avaliação profissional.",
+      "Tentativas frustradas de parar, perda de controle, aumento do consumo, conflitos familiares, prejuízos profissionais e continuar bebendo apesar das consequências são sinais que merecem atenção e avaliação profissional.",
+      "O cuidado pode envolver avaliação clínica, acompanhamento psicológico e psiquiátrico, psicoterapia individual e em grupo, prevenção de recaídas, orientação familiar e atividades que integram o programa terapêutico.",
     ],
     frequentlyAskedQuestions: [],
-    cta: "Saiba como podemos ajudar",
+    cta: "Falar com nossa equipe",
   },
   {
     name: "Psiquiatria e Saúde Mental",

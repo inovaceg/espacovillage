@@ -28,10 +28,7 @@ const App = () => (
       <Route path="/" element={<Index />} />
       <Route path="/a-clinica" element={<AClinica />} />
       <Route path="/tratamentos" element={<Tratamentos />} />
-      <Route path="/tratamentos/dependencia-quimica" element={<TreatmentDetailPage />} />
-      <Route path="/tratamentos/alcoolismo" element={<TreatmentDetailPage />} />
-      <Route path="/tratamentos/saude-mental" element={<TreatmentDetailPage />} />
-      <Route path="/tratamentos/internacao" element={<TreatmentDetailPage />} />
+      <Route path="/tratamentos/:slug" element={<TreatmentDetailPage />} />
       <Route path="/estrutura" element={<Estrutura />} />
       <Route path="/equipe" element={<Equipe />} />
       <Route path="/unidades" element={<Unidades />} />
