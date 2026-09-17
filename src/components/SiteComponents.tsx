@@ -43,8 +43,8 @@ export function Header() {
   return <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d8ddcf]/80 bg-[#fbfaf5]/95 backdrop-blur" aria-label="Cabeçalho principal">
     <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-2 px-3 sm:gap-4 sm:px-5 lg:px-8">
       <Link to="/" onClick={() => setOpen(false)} className="flex min-w-0 items-center gap-2 sm:gap-3" aria-label="Espaço Village, página inicial">
-        <img src="/assets/image-removebg-preview.png" alt="Espaço Village" className="h-14 w-auto shrink-0 object-contain" width="180" height="80" />
-        <span className="min-w-0 border-l border-[#cdd7c8] pl-2 text-[10px] leading-4 text-[#526153] sm:pl-3 sm:text-xs sm:leading-5 xl:hidden 2xl:block"><strong className="block whitespace-nowrap font-semibold tracking-[0.08em] text-[#244c36] sm:tracking-[0.12em]">ESPAÇO VILLAGE</strong><span className="max-[359px]:hidden">Clínica • Guapimirim/RJ</span></span>
+        <img src="/assets/image-removebg-preview.png" alt="Espaço Village" className="h-12 w-auto shrink-0 object-contain sm:h-14" width="180" height="80" />
+        <span className="min-w-0 border-l border-[#cdd7c8] pl-2 text-[10px] leading-4 text-[#526153] sm:pl-3 sm:text-xs sm:leading-5"><strong className="block whitespace-nowrap font-semibold tracking-[0.08em] text-[#244c36] sm:tracking-[0.12em]">ESPAÇO VILLAGE</strong><span className="max-[359px]:hidden">Clínica • Guapimirim/RJ</span></span>
       </Link>
       <nav className="hidden items-center gap-3 xl:flex" aria-label="Navegação principal">{navItems.map(([label, href]) => <NavLink key={href} to={href} className={({ isActive }) => `text-[13px] font-medium tracking-wide transition-colors ${isActive ? "text-[#244c36]" : "text-[#526153] hover:text-[#244c36]"}`}>{label}</NavLink>)}</nav>
       <div className="hidden items-center gap-4 xl:flex"><a href={site.phoneHref} className="hidden items-center gap-2 whitespace-nowrap text-sm font-medium text-[#244c36] 2xl:flex" aria-label={`Telefone ${site.phone}`}><Phone size={15} />{site.phone}</a><ContactButton /></div>
