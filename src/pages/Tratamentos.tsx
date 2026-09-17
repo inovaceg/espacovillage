@@ -1,1 +1,1 @@
-export { TreatmentsPage as default } from "./PageTemplates";
+export { default } from "./TreatmentsPage";
